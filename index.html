@@ -180,7 +180,7 @@
         texts.forEach((txt, i) => {
             if (i < texts.length - 1) {
                 tl.to([txt, screens[i], bgs[i]], { opacity: 1, y: 0, duration: 1.0, ease: "power1.out" })
-                    .to({}, { duration: 0.5 }) `
+                    .to({}, { duration: 0.5 }) 
                     .to([txt, screens[i], bgs[i]], { opacity: 0, y: -100, duration: 1.0, ease: "power1.in" });
             } else {
                 
