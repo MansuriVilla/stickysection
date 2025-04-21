@@ -159,32 +159,28 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        
         const texts = gsap.utils.toArray('.feature'),
             screens = gsap.utils.toArray('.screen'),
             bgs = gsap.utils.toArray('.feature-bg');
 
-        
         gsap.set([texts[0], screens[0], bgs[0]], { opacity: 1, y: 0 });
         gsap.set([...texts.slice(1), ...screens.slice(1), ...bgs.slice(1)], { opacity: 0, y: 100 });
 
-        
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#stacking_section-container",
                 start: "top top",
-                end: "+=900%", 
-                scrub: true,
+                end: "+=" + (window.innerHeight * 13), 
+                scrub: 0.2,
                 pin: true,
                 markers: true
             }
         });
 
-        
         texts.forEach((txt, i) => {
             if (i < texts.length - 1) {
                 tl.to([txt, screens[i], bgs[i]], { opacity: 1, y: 0, duration: 1.0, ease: "power1.out" })
-                    .to({}, { duration: 0.5 }) 
+                    .to({}, { duration: 0.5 }) `
                     .to([txt, screens[i], bgs[i]], { opacity: 0, y: -100, duration: 1.0, ease: "power1.in" });
             } else {
                 
