@@ -19,37 +19,32 @@
 
       .spacer {
         height: 100vh;
-        background-color: antiquewhite;
+        
         display: flex;
       }
 
       .stacking_section-container {
         position: relative;
-        min-height: 100vh; /* Ensure container has height for pinning */
       }
 
-      .stacking_section-inner {
-        display: flex;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-      }
 
       .stacking_left,
       .stacking_right {
-        flex: 30%;
-        padding: 1rem;
+        
         position: relative;
-        height: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
       }
-
+      .stacking_left {flex: 30%; height: 100%; align-items: flex-start;}
+      .stacking_right {flex: 50%;}
+      
       .stacking_center {
         flex: 35%;
         position: relative;
         width: 300px;
-        height: 600px;
+        height: 650px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -76,20 +71,24 @@
       .feature-bg {
         position: absolute;
         width: 100%;
-        max-width: 600px;
-        border-radius: 30px;
         overflow: hidden;
-        opacity: 0; /* Ensure hidden initially */
+        opacity: 0;
       }
 
       .feature {
         position: absolute;
-        width: 100%; /* Prevent text from collapsing */
-        opacity: 0; /* Ensure hidden initially */
+        width: 100%;
+
+        text-align: center;
+        max-width: 390px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        color: #000;
       }
 
       .page-width {
-        max-width: 1500px;
+        max-width: 95%;
         margin: 0 auto;
         padding: 0 40px;
       }
@@ -103,25 +102,76 @@
         justify-content: center;
         align-items: center;
         max-height: 230px;
+  max-width: 170px;
+        
       }
 
+      .screen {
+  max-width: 150px;
+}
       .UI_right {
         background-color: #202020;
       }
+
       .BG_right {
-        background-color: #606060;
+        background-color:#F4F4F4;
+        padding: 80px 0;
       }
+
       .feature-line {
-  display: block; /* Ensure each line is on a new line */
-  margin-bottom: 0.5rem; /* Add spacing between lines */
-}
+        display: block;
+        margin-bottom: 0.5rem;
+      }
 
       h2 {
-  text-align: center;
-  padding-top: 100px;
-  font-size: 42px;
+        text-align: center;
+        padding-top: 100px;
+        font-size: 42px;
+      }
+
+      .feature_text--container {
+        display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  top: 0;
+  padding-bottom: 120px;
+  overflow: hidden;
+        
+      }
+.stacking_section-inner{background-color: #fff; border-radius: 20px; overflow: hidden;         display: flex;
+        height: 90vh;
+        align-items: center;
+        justify-content: center;}
+
+
+        .sticky_slider-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 30px;
 }
-      /* Responsive adjustments */
+.sticky_slider-button {
+  background: transparent;
+  outline: none;
+  border: 1px solid #000 !important;
+  color: #000;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
+.sticky_slider-button:hover{background-color: #fff;}
+.sticky_slider-button:active{background-color: #ffffff70;}
       @media (max-width: 768px) {
         .stacking_section-inner {
           flex-direction: column;
@@ -149,286 +199,20 @@
         .screens-container {
           max-width: 50%;
         }
-        
       }
     </style>
   </head>
 
   <body>
     <div class="spacer"></div>
-    <div class="stacking_section-container">
-        <h2>OPTION ONE</h2>
-      <div class="stacking_section-inner page-width">
-        <div class="stacking_section-content__Text stacking_left">
-          <div class="feature">
-            <h3>ADVANCED COURSE VIEW</h3>
-            <p>
-              Get the full picture. PlayMaker+ offers a detailed course View with
-              greens, hazards, and even club recommendations to give you a
-              strategic edge. Know your surroundings and plan every shot with
-              precision.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>FRONT/CENTER/BACK DISTANCES</h3>
-            <p>
-              Dial in every approach shot. The PlayMaker+ gives you precise Front,
-              Center, and Back distances to the green, empowering you to make
-              smarter, more confident club selections every time.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>GREEN COMPASS</h3>
-            <p>
-              Never lose your direction. The PlayMaker+'s Green Compass feature
-              points you straight to the green from any position, letting you plan
-              your shots with confidence.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>ADVANCED SHOT TRACKING</h3>
-            <p>
-              Measure every shot, track every stat. The PlayMaker+ automatically
-              records and uploads shot distances and performance data your
-              personalized POST GAME dashboard, providing valuable insights to
-              help you improve and lower your scores.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>DYNAMIC HAZARD DISTANCES</h3>
-            <p>
-              Never lose your direction. The PlayMaker+'s Green Compass feature
-              points you straight to the green from any position, letting you plan
-              your shots with confidence.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>SCOREKEEPING</h3>
-            <p>
-              See your current score, total strokes, and longest drive—all updated
-              in real time. It's your round at a glance, perfectly organized to
-              help you stay focused, informed, and ready to crush your goals on
-              every hole.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>REAL-TIME WEATHER</h3>
-            <p>
-              Stay ahead of the elements. With real-time weather updates,
-              including temperature and precipitation, PlayMaker+ helps you adjust
-              your strategy to match the conditions.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>ACTIVITY TRACKING</h3>
-            <p>
-              Track more than just steps. The PlayMaker+ acts as your ultimate
-              golf activity monitor, recording your round with a built-in timer
-              while keeping tabs on calories burned and overall movement. Whether
-              you're golfing or off the course, PlayMaker+ keeps up with your
-              active lifestyle.
-            </p>
-          </div>
+    <div class="stacking_section-container BG_right" data-slide-onclick="true">
+      <div class="page-width">
+        <div class="sticky_slider-buttons">
+          <button class="sticky_slider-button prev-btn"><svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M10.5 1L1.5 10.5L10.5 19" stroke="black" stroke-width="2"></path> </svg></button>
+          <button class="sticky_slider-button next-btn"><svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 19L10.5 9.5L1.5 0.999999" stroke="black" stroke-width="2"></path></svg></button>
         </div>
-        <div class="stacking_section-content__Device stacking_center">
-          <img class="device-frame" src="./frame-2.png" alt="Frame" />
-          <div class="screens-container">
-            <img class="screen" src="./watch-screen-1.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-2.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-3.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-4.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-5.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-6.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-7.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-8.png" alt="Frame" />
-          </div>
-        </div>
-        <div class="stacking_section-content__Bg stacking_right">
-          <img class="feature-bg" src="./course-view-pmp-desktop-new.png" alt="Course View" />
-          <img class="feature-bg" src="./fcb-pmp-desktop-new.png" alt="Front Center Back" />
-          <img class="feature-bg" src="./green-compass-pmp-desktop-new.png" alt="Green Compass" />
-          <img class="feature-bg" src="./shot-tracking-pmp-desktop-new.png" alt="Shot Tracking" />
-          <img class="feature-bg" src="./dynamic-pmp-desktop-new.png" alt="Dynamic Hazard" />
-          <img class="feature-bg" src="./scroek-pmp-desktop-new.png" alt="Scorekeeping" />
-          <img class="feature-bg" src="./rtw-pmp-desktop-new.png" alt="Real-Time Weather" />
-          <img class="feature-bg" src="./acitivty-t-pmp-desktop-new.png" alt="Activity Tracking" />
-        </div>
-      </div>
-    </div>
-    <div class="stacking_section-container UI_right">
-        <h2>OPTION TWO MOVING BACKGROUND IMAGE TO RIGHT SIDE</h2>
-      <div class="stacking_section-inner page-width">
-        <div class="stacking_section-content__Text stacking_left">
-          <div class="feature">
-            <h3>ADVANCED COURSE VIEW</h3>
-            <p>
-              Get the full picture. PlayMaker+ offers a detailed course View with
-              greens, hazards, and even club recommendations to give you a
-              strategic edge. Know your surroundings and plan every shot with
-              precision.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>FRONT/CENTER/BACK DISTANCES</h3>
-            <p>
-              Dial in every approach shot. The PlayMaker+ gives you precise Front,
-              Center, and Back distances to the green, empowering you to make
-              smarter, more confident club selections every time.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>GREEN COMPASS</h3>
-            <p>
-              Never lose your direction. The PlayMaker+'s Green Compass feature
-              points you straight to the green from any position, letting you plan
-              your shots with confidence.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>ADVANCED SHOT TRACKING</h3>
-            <p>
-              Measure every shot, track every stat. The PlayMaker+ automatically
-              records and uploads shot distances and performance data your
-              personalized POST GAME dashboard, providing valuable insights to
-              help you improve and lower your scores.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>DYNAMIC HAZARD DISTANCES</h3>
-            <p>
-              Never lose your direction. The PlayMaker+'s Green Compass feature
-              points you straight to the green from any position, letting you plan
-              your shots with confidence.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>SCOREKEEPING</h3>
-            <p>
-              See your current score, total strokes, and longest drive—all updated
-              in real time. It's your round at a glance, perfectly organized to
-              help you stay focused, informed, and ready to crush your goals on
-              every hole.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>REAL-TIME WEATHER</h3>
-            <p>
-              Stay ahead of the elements. With real-time weather updates,
-              including temperature and precipitation, PlayMaker+ helps you adjust
-              your strategy to match the conditions.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>ACTIVITY TRACKING</h3>
-            <p>
-              Track more than just steps. The PlayMaker+ acts as your ultimate
-              golf activity monitor, recording your round with a built-in timer
-              while keeping tabs on calories burned and overall movement. Whether
-              you're golfing or off the course, PlayMaker+ keeps up with your
-              active lifestyle.
-            </p>
-          </div>
-        </div>
-        <div class="stacking_section-content__Device stacking_center">
-          <img class="device-frame" src="./frame-2.png" alt="Frame" />
-          <div class="screens-container">
-            <img class="screen" src="./watch-screen-1.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-2.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-3.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-4.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-5.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-6.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-7.png" alt="Frame" />
-            <img class="screen" src="./watch-screen-8.png" alt="Frame" />
-          </div>
-        </div>
-        <div class="stacking_section-content__Bg stacking_right">
-          <img class="feature-bg" src="./course-view-pmp-desktop-new.png" alt="Course View" />
-          <img class="feature-bg" src="./fcb-pmp-desktop-new.png" alt="Front Center Back" />
-          <img class="feature-bg" src="./green-compass-pmp-desktop-new.png" alt="Green Compass" />
-          <img class="feature-bg" src="./shot-tracking-pmp-desktop-new.png" alt="Shot Tracking" />
-          <img class="feature-bg" src="./dynamic-pmp-desktop-new.png" alt="Dynamic Hazard" />
-          <img class="feature-bg" src="./scroek-pmp-desktop-new.png" alt="Scorekeeping" />
-          <img class="feature-bg" src="./rtw-pmp-desktop-new.png" alt="Real-Time Weather" />
-          <img class="feature-bg" src="./acitivty-t-pmp-desktop-new.png" alt="Activity Tracking" />
-        </div>
-      </div>
-    </div>
-    <div class="stacking_section-container BG_right">
-        <h2>OPTION TWO MOVING UI TO RIGHT SIDE</h2>
-      
-        <div class="stacking_section-inner page-width">
-            <div class="stacking_section-content__Text stacking_left">
-              <div class="feature">
-                <h3>ADVANCED COURSE VIEW</h3>
-                <p>
-                  Get the full picture. PlayMaker+ offers a detailed course View with
-                  greens, hazards, and even club recommendations to give you a
-                  strategic edge. Know your surroundings and plan every shot with
-                  precision.
-                </p>
-              </div>
-              <div class="feature">
-                <h3>FRONT/CENTER/BACK DISTANCES</h3>
-                <p>
-                  Dial in every approach shot. The PlayMaker+ gives you precise Front,
-                  Center, and Back distances to the green, empowering you to make
-                  smarter, more confident club selections every time.
-                </p>
-              </div>
-              <div class="feature">
-                <h3>GREEN COMPASS</h3>
-                <p>
-                  Never lose your direction. The PlayMaker+'s Green Compass feature
-                  points you straight to the green from any position, letting you plan
-                  your shots with confidence.
-                </p>
-              </div>
-              <div class="feature">
-                <h3>ADVANCED SHOT TRACKING</h3>
-                <p>
-                  Measure every shot, track every stat. The PlayMaker+ automatically
-                  records and uploads shot distances and performance data your
-                  personalized POST GAME dashboard, providing valuable insights to
-                  help you improve and lower your scores.
-                </p>
-              </div>
-              <div class="feature">
-                <h3>DYNAMIC HAZARD DISTANCES</h3>
-                <p>
-                  Never lose your direction. The PlayMaker+'s Green Compass feature
-                  points you straight to the green from any position, letting you plan
-                  your shots with confidence.
-                </p>
-              </div>
-              <div class="feature">
-                <h3>SCOREKEEPING</h3>
-                <p>
-                  See your current score, total strokes, and longest drive—all updated
-                  in real time. It's your round at a glance, perfectly organized to
-                  help you stay focused, informed, and ready to crush your goals on
-                  every hole.
-                </p>
-              </div>
-              <div class="feature">
-                <h3>REAL-TIME WEATHER</h3>
-                <p>
-                  Stay ahead of the elements. With real-time weather updates,
-                  including temperature and precipitation, PlayMaker+ helps you adjust
-                  your strategy to match the conditions.
-                </p>
-              </div>
-              <div class="feature">
-                <h3>ACTIVITY TRACKING</h3>
-                <p>
-                  Track more than just steps. The PlayMaker+ acts as your ultimate
-                  golf activity monitor, recording your round with a built-in timer
-                  while keeping tabs on calories burned and overall movement. Whether
-                  you're golfing or off the course, PlayMaker+ keeps up with your
-                  active lifestyle.
-                </p>
-              </div>
-            </div>
+        <div class="stacking_section-inner">
+          <div class="stacking_section-content__Text stacking_left">
             <div class="stacking_section-content__Device stacking_center">
               <img class="device-frame" src="./frame-2.png" alt="Frame" />
               <div class="screens-container">
@@ -442,150 +226,318 @@
                 <img class="screen" src="./watch-screen-8.png" alt="Frame" />
               </div>
             </div>
-            <div class="stacking_section-content__Bg stacking_right">
-              <img class="feature-bg" src="./course-view-pmp-desktop-new.png" alt="Course View" />
-              <img class="feature-bg" src="./fcb-pmp-desktop-new.png" alt="Front Center Back" />
-              <img class="feature-bg" src="./green-compass-pmp-desktop-new.png" alt="Green Compass" />
-              <img class="feature-bg" src="./shot-tracking-pmp-desktop-new.png" alt="Shot Tracking" />
-              <img class="feature-bg" src="./dynamic-pmp-desktop-new.png" alt="Dynamic Hazard" />
-              <img class="feature-bg" src="./scroek-pmp-desktop-new.png" alt="Scorekeeping" />
-              <img class="feature-bg" src="./rtw-pmp-desktop-new.png" alt="Real-Time Weather" />
-              <img class="feature-bg" src="./acitivty-t-pmp-desktop-new.png" alt="Activity Tracking" />
+            <div class="feature_text--container">
+              <div class="feature">
+                <h3>ADVANCED COURSE VIEW</h3>
+                <p>
+                  Get the full picture. PlayMaker+ offers a detailed course View
+                  with greens, hazards, and even club recommendations to give you
+                  a strategic edge. Know your surroundings and plan every shot
+                  with precision.
+                </p>
+              </div>
+              <div class="feature">
+                <h3>FRONT/CENTER/BACK DISTANCES</h3>
+                <p>
+                  Dial in every approach shot. The PlayMaker+ gives you precise
+                  Front, Center, and Back distances to the green, empowering you
+                  to make smarter, more confident club selections every time.
+                </p>
+              </div>
+              <div class="feature">
+                <h3>GREEN COMPASS</h3>
+                <p>
+                  Never lose your direction. The PlayMaker+'s Green Compass
+                  feature points you straight to the green from any position,
+                  letting you plan your shots with confidence.
+                </p>
+              </div>
+              <div class="feature">
+                <h3>ADVANCED SHOT TRACKING</h3>
+                <p>
+                  Measure every shot, track every stat. The PlayMaker+
+                  automatically records and uploads shot distances and performance
+                  data your personalized POST GAME dashboard, providing valuable
+                  insights to help you improve and lower your scores.
+                </p>
+              </div>
+              <div class="feature">
+                <h3>DYNAMIC HAZARD DISTANCES</h3>
+                <p>
+                  Never lose your direction. The PlayMaker+'s Green Compass
+                  feature points you straight to the green from any position,
+                  letting you plan your shots with confidence.
+                </p>
+              </div>
+              <div class="feature">
+                <h3>SCOREKEEPING</h3>
+                <p>
+                  See your current score, total strokes, and longest drive—all
+                  updated in real time. It's your round at a glance, perfectly
+                  organized to help you stay focused, informed, and ready to crush
+                  your goals on every hole.
+                </p>
+              </div>
+              <div class="feature">
+                <h3>REAL-TIME WEATHER</h3>
+                <p>
+                  Stay ahead of the elements. With real-time weather updates,
+                  including temperature and precipitation, PlayMaker+ helps you
+                  adjust your strategy to match the conditions.
+                </p>
+              </div>
+              <div class="feature">
+                <h3>ACTIVITY TRACKING</h3>
+                <p>
+                  Track more than just steps. The PlayMaker+ acts as your ultimate
+                  golf activity monitor, recording your round with a built-in
+                  timer while keeping tabs on calories burned and overall
+                  movement. Whether you're golfing or off the course, PlayMaker+
+                  keeps up with your active lifestyle.
+                </p>
+              </div>
             </div>
           </div>
+          <div class="stacking_section-content__Bg stacking_right">
+            <img
+              class="feature-bg"
+              src="./advanced-slider-content-img.png"
+              alt="Course View"
+            />
+            <img
+              class="feature-bg"
+              src="./fcb-distances-content-img.png"
+              alt="Front Center Back"
+            />
+            <img
+              class="feature-bg"
+              src="./green-compass-content-img.png"
+              alt="Green Compass"
+            />
+            <img
+              class="feature-bg"
+              src="./advanced-shot-content-img.png"
+              alt="Shot Tracking"
+            />
+            <img
+              class="feature-bg"
+              src="./dynamic-hazard-content-img.png"
+              alt="Dynamic Hazard"
+            />
+            <img
+              class="feature-bg"
+              src="./scroe-tracking-content-img.png"
+              alt="Scorekeeping"
+            />
+            <img
+              class="feature-bg"
+              src="./real-time-weather-content-img.png"
+              alt="Real-Time Weather"
+            />
+            <img
+              class="feature-bg"
+              src="./acitivty-t-pmp-desktop-new.png"
+              alt="Activity Tracking"
+            />
+          </div>
+        </div>
+      </div>
       
     </div>
+
     <div class="spacer"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-     gsap.registerPlugin(ScrollTrigger);
+     document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
 
-
-const animationConfigs = {
-  default: {
-    screen: { axis: 'y', distance: 50 }, 
-    featureBg: { axis: 'y', distance: 50 }, 
-    feature: { axis: 'y', distance: 50 }, 
-    duration: 0.5,
-    pause: 0.3,
-    easeIn: 'power1.out',
-    easeOut: 'power1.in',
-  },
-  UI_right: {
-    screen: { axis: 'y', distance: 75 }, 
-    featureBg: { axis: 'x', distance: 100 }, 
-    feature: { axis: 'y', distance: 50 }, 
-    duration: 0.7, 
-    pause: 0.4, 
-    easeIn: 'expo.out',
-    easeOut: 'expo.in',
-  },
-  BG_right: {
-    screen: { axis: 'x', distance: 100 }, 
-    featureBg: { axis: 'y', distance: 75 }, 
-    feature: { axis: 'y', distance: 50 }, 
-    duration: 0.6,
-    pause: 0.35,
-    easeIn: 'power2.out',
-    easeOut: 'power2.in',
-  },
-};
-
-
-const containers = document.querySelectorAll(".stacking_section-container");
-
-containers.forEach((container, index) => {
-  
-  let configKey = 'default';
-  if (container.classList.contains('UI_right')) {
-    configKey = 'UI_right';
-  } else if (container.classList.contains('BG_right')) {
-    configKey = 'BG_right';
-  }
-  const config = animationConfigs[configKey];
-
-  
-  const texts = gsap.utils.toArray(".feature", container);
-  const screens = gsap.utils.toArray(".screen", container);
-  const bgs = gsap.utils.toArray(".feature-bg", container);
-
-  
-  if (texts.length !== screens.length || texts.length !== bgs.length) {
-    console.error(`Mismatch in element counts for container ${index + 1}`);
-    return;
-  }
-
-  
-  gsap.set([texts[0], screens[0], bgs[0]], { opacity: 1, x: 0, y: 0 });
-  gsap.set([...texts.slice(1)], {
-    opacity: 0,
-    [config.feature.axis]: config.feature.distance,
-  });
-  gsap.set([...screens.slice(1)], {
-    opacity: 0,
-    [config.screen.axis]: config.screen.distance,
-  });
-  gsap.set([...bgs.slice(1)], {
-    opacity: 0,
-    [config.featureBg.axis]: config.featureBg.distance,
-  });
-
-  
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "top top",
-      end: `+=${window.innerHeight * texts.length}`, 
-      scrub: 0.2,
-      pin: true,
-      markers: false, 
+  const animationConfigs = {
+    BG_right: {
+      screen: { axis: "x", distance: 200 },
+      featureBg: { axis: "y", distance: 0 },
+      feature: { axis: "x", distance: 600 },
+      duration: 0.6,
+      pause: 0.35,
+      easeIn: "linear",
+      easeOut: "linear",
     },
-  });
+  };
 
-  
-  texts.forEach((txt, i) => {
-    const animProps = {
-      opacity: 1,
-      duration: config.duration,
-      ease: config.easeIn,
-    };
-    const exitProps = {
-      opacity: 0,
-      duration: config.duration,
-      ease: config.easeOut,
-    };
+  const containers = document.querySelectorAll(".stacking_section-container");
 
-    
-    const textAnim = { ...animProps, [config.feature.axis]: 0 };
-    const screenAnim = { ...animProps, [config.screen.axis]: 0 };
-    const bgAnim = { ...animProps, [config.featureBg.axis]: 0 };
-    const textExit = {
-      ...exitProps,
-      [config.feature.axis]: -config.feature.distance,
-    };
-    const screenExit = {
-      ...exitProps,
-      [config.screen.axis]: -config.screen.distance,
-    };
-    const bgExit = {
-      ...exitProps,
-      [config.featureBg.axis]: -config.featureBg.distance,
-    };
+  containers.forEach((container, index) => {
+    let configKey = "default";
+    if (container.classList.contains("UI_right")) {
+      configKey = "UI_right";
+    } else if (container.classList.contains("BG_right")) {
+      configKey = "BG_right";
+    }
 
-    if (i < texts.length - 1) {
-      tl.to(txt, textAnim)
-        .to(screens[i], screenAnim, "<") 
-        .to(bgs[i], bgAnim, "<")
-        .to({}, { duration: config.pause }) 
-        .to(txt, textExit)
-        .to(screens[i], screenExit, "<")
-        .to(bgs[i], bgExit, "<");
+    if (!animationConfigs[configKey]) {
+      console.warn(`Configuration for "${configKey}" not found. Skipping container ${index + 1}.`);
+      return;
+    }
+
+    const config = animationConfigs[configKey];
+
+    const texts = gsap.utils.toArray(".feature", container);
+    const screens = gsap.utils.toArray(".screen", container);
+    const bgs = gsap.utils.toArray(".feature-bg", container);
+
+    if (texts.length !== screens.length || texts.length !== bgs.length) {
+      console.error(`Mismatch in element counts for container ${index + 1}`);
+      return;
+    }
+
+    // Initialize first elements and add active class to the first feature text
+    gsap.set([texts[0], screens[0], bgs[0]], { x: 0, y: 0, opacity: 1 });
+    texts[0].classList.add("active"); // Set initial active class
+    gsap.set([...texts.slice(1)], { x: config.feature.distance });
+    gsap.set([...screens.slice(1)], { x: config.screen.distance });
+    gsap.set([...bgs.slice(1)], { opacity: 0, y: config.featureBg.distance });
+
+    const isClickMode = container.dataset.slideOnclick === "true";
+
+    if (!isClickMode) {
+      // Scroll-based animation (unchanged)
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: `+=${window.innerHeight * texts.length}`,
+          scrub: 0.2,
+          pin: true,
+          markers: false,
+        },
+      });
+
+      texts.forEach((txt, i) => {
+        const animProps = {
+          opacity: 1,
+          duration: config.duration,
+          ease: config.easeIn,
+        };
+        const exitProps = {
+          opacity: 0,
+          duration: config.duration,
+          ease: config.easeOut,
+        };
+
+        const textAnim = { ...animProps, x: 0 };
+        const screenAnim = { ...animProps, x: 0 };
+        const bgAnim = { ...animProps, y: 0 };
+        const textExit = { ...exitProps, x: -config.feature.distance };
+        const screenExit = { ...exitProps, x: -config.screen.distance };
+        const bgExit = { ...exitProps, y: -config.featureBg.distance };
+
+        if (i < texts.length - 1) {
+          tl.to(txt, textAnim)
+            .to(screens[i], screenAnim, "<")
+            .to(bgs[i], bgAnim, "<")
+            .to({}, { duration: config.pause })
+            .to(txt, textExit)
+            .to(screens[i], screenExit, "<")
+            .to(bgs[i], bgExit, "<");
+        } else {
+          tl.to(txt, textAnim)
+            .to(screens[i], screenAnim, "<")
+            .to(bgs[i], bgAnim, "<")
+            .to({}, { duration: config.pause });
+        }
+      });
     } else {
-      tl.to(txt, textAnim)
-        .to(screens[i], screenAnim, "<")
-        .to(bgs[i], bgAnim, "<")
-        .to({}, { duration: config.pause });
+      const prevBtn = container.querySelector(".prev-btn");
+      const nextBtn = container.querySelector(".next-btn");
+      if (!prevBtn || !nextBtn) {
+        console.warn(`Previous or next button not found in container ${index + 1}`);
+        return;
+      }
+      let currentIndex = 0;
+      let isAnimating = false; // Flag to track animation state
+
+      const animateToIndex = (targetIndex) => {
+        if (
+          targetIndex < 0 ||
+          targetIndex >= texts.length ||
+          targetIndex === currentIndex ||
+          isAnimating
+        )
+          return;
+
+        isAnimating = true; // Set flag to true at start of animation
+
+        const direction = targetIndex > currentIndex ? 1 : -1;
+        const currentText = texts[currentIndex];
+        const currentScreen = screens[currentIndex];
+        const currentBg = bgs[currentIndex];
+        const targetText = texts[targetIndex];
+        const targetScreen = screens[targetIndex];
+        const targetBg = bgs[targetIndex];
+
+        // Remove active class from current text
+        currentText.classList.remove("active");
+
+        // Set initial position for target elements
+        gsap.set(targetText, { x: direction * config.feature.distance });
+        gsap.set(targetScreen, { x: direction * config.screen.distance });
+        gsap.set(targetBg, { opacity: 0, y: config.featureBg.distance });
+
+        // Animate current elements out
+        gsap.to(currentText, {
+          x: -direction * config.feature.distance,
+          duration: config.duration,
+          ease: config.easeOut,
+        });
+        gsap.to(currentScreen, {
+          x: -direction * config.screen.distance,
+          duration: config.duration,
+          ease: config.easeOut,
+        });
+        gsap.to(currentBg, {
+          opacity: 0,
+          duration: config.duration,
+          ease: config.easeOut,
+        });
+
+        // Animate target elements in
+        gsap.to(targetText, {
+          x: 0,
+          duration: config.duration,
+          ease: config.easeIn,
+          onComplete: () => {
+            isAnimating = false; // Reset flag when animation completes
+          },
+        });
+        gsap.to(targetScreen, {
+          x: 0,
+          duration: config.duration,
+          ease: config.easeIn,
+        });
+        gsap.to(targetBg, {
+          opacity: 1,
+          y: 0,
+          duration: config.duration,
+          ease: config.easeIn,
+        });
+
+        // Add active class to target text
+        targetText.classList.add("active");
+
+        currentIndex = targetIndex;
+      };
+
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < texts.length - 1) {
+          animateToIndex(currentIndex + 1);
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          animateToIndex(currentIndex - 1);
+        }
+      });
     }
   });
 });
