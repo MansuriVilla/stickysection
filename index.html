@@ -106,6 +106,12 @@
         
       }
 
+      .disable {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  
+}
       .screen {
   max-width: 150px;
 }
@@ -168,7 +174,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: 0.2s all linear;
+  transition: 0.2s background linear;
 }
 .sticky_slider-button:hover{background-color: #fff;}
 .sticky_slider-button:active{background-color: #ffffff70;}
@@ -349,7 +355,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-     document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const animationConfigs = {
@@ -400,7 +407,7 @@
     const isClickMode = container.dataset.slideOnclick === "true";
 
     if (!isClickMode) {
-      // Scroll-based animation (unchanged)
+      // Scroll-based animation
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
@@ -456,6 +463,12 @@
       let currentIndex = 0;
       let isAnimating = false; // Flag to track animation state
 
+      // Function to update button states
+      const updateButtonStates = () => {
+        prevBtn.classList.toggle("disable", currentIndex === 0);
+        nextBtn.classList.toggle("disable", currentIndex === texts.length - 1);
+      };
+
       const animateToIndex = (targetIndex) => {
         if (
           targetIndex < 0 ||
@@ -507,6 +520,7 @@
           ease: config.easeIn,
           onComplete: () => {
             isAnimating = false; // Reset flag when animation completes
+            updateButtonStates(); // Update button states after animation
           },
         });
         gsap.to(targetScreen, {
@@ -526,6 +540,9 @@
 
         currentIndex = targetIndex;
       };
+
+      // Initial button state
+      updateButtonStates();
 
       nextBtn.addEventListener("click", () => {
         if (currentIndex < texts.length - 1) {
