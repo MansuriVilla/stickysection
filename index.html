@@ -5,206 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sticky Section</title>
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        background: #0a0a0a;
-        color: #fff;
-        font-family: sans-serif;
-      }
-
-      .spacer {
-        height: 100vh;
-        
-        display: flex;
-      }
-
-      .stacking_section-container {
-        position: relative;
-      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #0a0a0a; color: #fff; font-family: sans-serif; }
 
 
-      .stacking_left,
-      .stacking_right {
-        
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .stacking_left {flex: 30%; height: 100%; align-items: flex-start;}
-      .stacking_right {flex: 50%;}
-      
-      .stacking_center {
-        flex: 35%;
-        position: relative;
-        width: 300px;
-        height: 650px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .device-frame {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        inset: 0;
-        z-index: 5;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      .screen,
-      .screens-container {
-        position: absolute;
-        z-index: 2;
-        max-width: 150px;
-      }
-
-      .feature-bg {
-        position: absolute;
-        width: 100%;
-        overflow: hidden;
-        opacity: 0;
-      }
-
-      .feature {
-        position: absolute;
-        width: 100%;
-
-        text-align: center;
-        max-width: 390px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-        color: #000;
-      }
-
-      .page-width {
-        max-width: 95%;
-        margin: 0 auto;
-        padding: 0 40px;
-      }
-
-      .screens-container {
-        width: 100%;
-        overflow: hidden;
-        background: #000;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-height: 230px;
-  max-width: 170px;
-        
-      }
-
-      .disable {
-  opacity: 0.5;
-  pointer-events: none;
-  cursor: not-allowed;
-  
-}
-      .screen {
-  max-width: 150px;
-}
-      .UI_right {
-        background-color: #202020;
-      }
-
-      .BG_right {
-        background-color:#F4F4F4;
-        padding: 80px 0;
-      }
-
-      .feature-line {
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      h2 {
-        text-align: center;
-        padding-top: 100px;
-        font-size: 42px;
-      }
-
-      .feature_text--container {
-        display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  
-  position: absolute;
-  top: 0;
-  padding-bottom: 120px;
-  overflow: hidden;
-        
-      }
-.stacking_section-inner{background-color: #fff; border-radius: 20px; overflow: hidden;         display: flex;
-        height: 90vh;
-        align-items: center;
-        justify-content: center;}
+      .spacer { height: 100vh; display: flex; }
+      .stacking_section-container { position: relative; }
+      .stacking_left, .stacking_right { position: relative; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+      .stacking_left { flex: 30%; height: 100%; align-items: flex-start; }
+      .stacking_right { flex: 50%; }
+      .stacking_center { flex: 35%; position: relative; width: 300px; height: 650px; display: flex; justify-content: center; align-items: center; }
+      .device-frame { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 5; max-width: 400px; margin: 0 auto; }
+      .screen, .screens-container { position: absolute; z-index: 2; max-width: 150px; }
+      .feature-bg { position: absolute; width: 100%; overflow: hidden; opacity: 0; }
+      .feature { position: absolute; width: 100%; text-align: center; max-width: 390px; display: flex; flex-direction: column; row-gap: 20px; color: #000; }
+      .page-width { max-width: 95%; margin: 0 auto; padding: 0 40px; }
+      .screens-container { width: 100%; overflow: hidden; background: #000; height: 100%; display: flex; justify-content: center; align-items: center; max-height: 230px; max-width: 170px; }
+      .disable { opacity: 0.5; pointer-events: none; cursor: not-allowed; }
+      .screen { max-width: 150px; }
+      .UI_right { background-color: #202020; }
+      .BG_right { background-color: #f4f4f4; padding: 80px 0; }
+      .feature-line { display: block; margin-bottom: 0.5rem; }
+      h2 { text-align: center; padding-top: 100px; font-size: 42px; }
+      .feature_text--container { display: flex; justify-content: center; align-items: flex-end; width: 100%; max-width: 100%; height: 100%; position: absolute; top: 0; padding-bottom: 120px; overflow: hidden; }
+      .stacking_section-inner { background-color: #fff; border-radius: 20px; overflow: hidden; display: flex; height: 90vh; align-items: center; justify-content: center; }
+      .sticky_slider-buttons { display: flex; justify-content: flex-end; align-items: center; gap: 13px; margin-bottom: 30px; }
+      .sticky_slider-button { background: transparent; outline: none; border: 1px solid #000 !important; color: #000; border-radius: 50px; height: 60px; width: 60px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.2s background linear; }
+      .sticky_slider-button:hover { background-color: #fff; }
+      .sticky_slider-button:active { background-color: #ffffff70; }
 
 
-        .sticky_slider-buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 13px;
-  margin-bottom: 30px;
-}
-.sticky_slider-button {
-  background: transparent;
-  outline: none;
-  border: 1px solid #000 !important;
-  color: #000;
-  border-radius: 50px;
-  height: 60px;
-  width: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.2s background linear;
-}
-.sticky_slider-button:hover{background-color: #fff;}
-.sticky_slider-button:active{background-color: #ffffff70;}
       @media (max-width: 768px) {
-        .stacking_section-inner {
-          flex-direction: column;
-          padding: 20px;
-        }
+        
+        .stacking_section-inner { flex-direction: column; padding: 20px; }
+        .stacking_left, .stacking_right, .stacking_center { flex: none; width: 100%; height: auto; }
+        .stacking_center { max-width: 300px; height: 400px; }
+        .feature-bg { max-width: 100%; }
+        .screen, .screens-container { max-width: 50%; }
 
-        .stacking_left,
-        .stacking_right,
-        .stacking_center {
-          flex: none;
-          width: 100%;
-          height: auto;
-        }
-
-        .stacking_center {
-          max-width: 300px;
-          height: 400px;
-        }
-
-        .feature-bg {
-          max-width: 100%;
-        }
-
-        .screen,
-        .screens-container {
-          max-width: 50%;
-        }
       }
     </style>
   </head>
@@ -354,210 +192,209 @@
     <div class="spacer"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const animationConfigs = {
-    BG_right: {
-      screen: { axis: "x", distance: 200 },
-      featureBg: { axis: "y", distance: 0 },
-      feature: { axis: "x", distance: 600 },
-      duration: 0.6,
-      pause: 0.35,
-      easeIn: "linear",
-      easeOut: "linear",
-    },
-  };
-
-  const containers = document.querySelectorAll(".stacking_section-container");
-
-  containers.forEach((container, index) => {
-    let configKey = "default";
-    if (container.classList.contains("UI_right")) {
-      configKey = "UI_right";
-    } else if (container.classList.contains("BG_right")) {
-      configKey = "BG_right";
-    }
-
-    if (!animationConfigs[configKey]) {
-      console.warn(`Configuration for "${configKey}" not found. Skipping container ${index + 1}.`);
-      return;
-    }
-
-    const config = animationConfigs[configKey];
-
-    const texts = gsap.utils.toArray(".feature", container);
-    const screens = gsap.utils.toArray(".screen", container);
-    const bgs = gsap.utils.toArray(".feature-bg", container);
-
-    if (texts.length !== screens.length || texts.length !== bgs.length) {
-      console.error(`Mismatch in element counts for container ${index + 1}`);
-      return;
-    }
-
-    // Initialize first elements and add active class to the first feature text
-    gsap.set([texts[0], screens[0], bgs[0]], { x: 0, y: 0, opacity: 1 });
-    texts[0].classList.add("active"); // Set initial active class
-    gsap.set([...texts.slice(1)], { x: config.feature.distance });
-    gsap.set([...screens.slice(1)], { x: config.screen.distance });
-    gsap.set([...bgs.slice(1)], { opacity: 0, y: config.featureBg.distance });
-
-    const isClickMode = container.dataset.slideOnclick === "true";
-
-    if (!isClickMode) {
-      // Scroll-based animation
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: `+=${window.innerHeight * texts.length}`,
-          scrub: 0.2,
-          pin: true,
-          markers: false,
-        },
-      });
-
-      texts.forEach((txt, i) => {
-        const animProps = {
-          opacity: 1,
-          duration: config.duration,
-          ease: config.easeIn,
-        };
-        const exitProps = {
-          opacity: 0,
-          duration: config.duration,
-          ease: config.easeOut,
-        };
-
-        const textAnim = { ...animProps, x: 0 };
-        const screenAnim = { ...animProps, x: 0 };
-        const bgAnim = { ...animProps, y: 0 };
-        const textExit = { ...exitProps, x: -config.feature.distance };
-        const screenExit = { ...exitProps, x: -config.screen.distance };
-        const bgExit = { ...exitProps, y: -config.featureBg.distance };
-
-        if (i < texts.length - 1) {
-          tl.to(txt, textAnim)
-            .to(screens[i], screenAnim, "<")
-            .to(bgs[i], bgAnim, "<")
-            .to({}, { duration: config.pause })
-            .to(txt, textExit)
-            .to(screens[i], screenExit, "<")
-            .to(bgs[i], bgExit, "<");
-        } else {
-          tl.to(txt, textAnim)
-            .to(screens[i], screenAnim, "<")
-            .to(bgs[i], bgAnim, "<")
-            .to({}, { duration: config.pause });
-        }
-      });
-    } else {
-      const prevBtn = container.querySelector(".prev-btn");
-      const nextBtn = container.querySelector(".next-btn");
-      if (!prevBtn || !nextBtn) {
-        console.warn(`Previous or next button not found in container ${index + 1}`);
-        return;
-      }
-      let currentIndex = 0;
-      let isAnimating = false; // Flag to track animation state
-
-      // Function to update button states
-      const updateButtonStates = () => {
-        prevBtn.classList.toggle("disable", currentIndex === 0);
-        nextBtn.classList.toggle("disable", currentIndex === texts.length - 1);
-      };
-
-      const animateToIndex = (targetIndex) => {
-        if (
-          targetIndex < 0 ||
-          targetIndex >= texts.length ||
-          targetIndex === currentIndex ||
-          isAnimating
-        )
-          return;
-
-        isAnimating = true; // Set flag to true at start of animation
-
-        const direction = targetIndex > currentIndex ? 1 : -1;
-        const currentText = texts[currentIndex];
-        const currentScreen = screens[currentIndex];
-        const currentBg = bgs[currentIndex];
-        const targetText = texts[targetIndex];
-        const targetScreen = screens[targetIndex];
-        const targetBg = bgs[targetIndex];
-
-        // Remove active class from current text
-        currentText.classList.remove("active");
-
-        // Set initial position for target elements
-        gsap.set(targetText, { x: direction * config.feature.distance });
-        gsap.set(targetScreen, { x: direction * config.screen.distance });
-        gsap.set(targetBg, { opacity: 0, y: config.featureBg.distance });
-
-        // Animate current elements out
-        gsap.to(currentText, {
-          x: -direction * config.feature.distance,
-          duration: config.duration,
-          ease: config.easeOut,
-        });
-        gsap.to(currentScreen, {
-          x: -direction * config.screen.distance,
-          duration: config.duration,
-          ease: config.easeOut,
-        });
-        gsap.to(currentBg, {
-          opacity: 0,
-          duration: config.duration,
-          ease: config.easeOut,
-        });
-
-        // Animate target elements in
-        gsap.to(targetText, {
-          x: 0,
-          duration: config.duration,
-          ease: config.easeIn,
-          onComplete: () => {
-            isAnimating = false; // Reset flag when animation completes
-            updateButtonStates(); // Update button states after animation
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+    
+        const animationConfigs = {
+          BG_right: {
+            screen: { axis: "x", distance: 200 },
+            featureBg: { axis: "y", distance: 0 },
+            feature: { axis: "x", distance: 0 },
+            duration: 0.6,
+            pause: 0.35,
+            easeIn: "linear",
+            easeOut: "linear",
           },
+        };
+    
+        const containers = document.querySelectorAll(".stacking_section-container");
+    
+        containers.forEach((container, index) => {
+          let configKey = "default";
+          if (container.classList.contains("UI_right")) {
+            configKey = "UI_right";
+          } else if (container.classList.contains("BG_right")) {
+            configKey = "BG_right";
+          }
+    
+          if (!animationConfigs[configKey]) {
+            console.warn(`Configuration for "${configKey}" not found. Skipping container ${index + 1}.`);
+            return;
+          }
+    
+          const config = animationConfigs[configKey];
+    
+          const texts = gsap.utils.toArray(".feature", container);
+          const screens = gsap.utils.toArray(".screen", container);
+          const bgs = gsap.utils.toArray(".feature-bg", container);
+    
+          if (texts.length !== screens.length || texts.length !== bgs.length) {
+            console.error(`Mismatch in element counts for container ${index + 1}`);
+            return;
+          }
+    
+          // **Initial Setup: Set first elements visible, others hidden for texts**
+          gsap.set([texts[0], screens[0], bgs[0]], { x: 0, y: 0, opacity: 1 });
+          texts[0].classList.add("active"); // Set initial active class
+          gsap.set([...texts.slice(1)], { x: config.feature.distance, opacity: 0 }); // Changed: Added opacity: 0
+          gsap.set([...screens.slice(1)], { x: config.screen.distance });
+          gsap.set([...bgs.slice(1)], { opacity: 0, y: config.featureBg.distance });
+    
+          const isClickMode = container.dataset.slideOnclick === "true";
+    
+          if (!isClickMode) {
+            // Scroll-based animation (unchanged)
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: container,
+                start: "top top",
+                end: `+=${window.innerHeight * texts.length}`,
+                scrub: 0.2,
+                pin: true,
+                markers: false,
+              },
+            });
+    
+            texts.forEach((txt, i) => {
+              const animProps = {
+                opacity: 1,
+                duration: config.duration,
+                ease: config.easeIn,
+              };
+              const exitProps = {
+                opacity: 0,
+                duration: config.duration,
+                ease: config.easeOut,
+              };
+    
+              const textAnim = { ...animProps, x: 0 };
+              const screenAnim = { ...animProps, x: 0 };
+              const bgAnim = { ...animProps, y: 0 };
+              const textExit = { ...exitProps, x: -config.feature.distance };
+              const screenExit = { ...exitProps, x: -config.screen.distance };
+              const bgExit = { ...exitProps, y: -config.featureBg.distance };
+    
+              if (i < texts.length - 1) {
+                tl.to(txt, textAnim)
+                  .to(screens[i], screenAnim, "<")
+                  .to(bgs[i], bgAnim, "<")
+                  .to({}, { duration: config.pause })
+                  .to(txt, textExit)
+                  .to(screens[i], screenExit, "<")
+                  .to(bgs[i], bgExit, "<");
+              } else {
+                tl.to(txt, textAnim)
+                  .to(screens[i], screenAnim, "<")
+                  .to(bgs[i], bgAnim, "<")
+                  .to({}, { duration: config.pause });
+              }
+            });
+          } else {
+            const prevBtn = container.querySelector(".prev-btn");
+            const nextBtn = container.querySelector(".next-btn");
+            0
+            let currentIndex = 0;
+            let isAnimating = false; // Flag to track animation state
+    
+            // Function to update button states
+            const updateButtonStates = () => {
+              prevBtn.classList.toggle("disable", currentIndex === 0);
+              nextBtn.classList.toggle("disable", currentIndex === texts.length - 1);
+            };
+    
+            const animateToIndex = (targetIndex) => {
+              if (
+                targetIndex < 0 ||
+                targetIndex >= texts.length ||
+                targetIndex === currentIndex ||
+                isAnimating
+              )
+                return;
+    
+              isAnimating = true; // Set flag to true at start of animation
+    
+              const direction = targetIndex > currentIndex ? 1 : -1;
+              const currentText = texts[currentIndex];
+              const currentScreen = screens[currentIndex];
+              const currentBg = bgs[currentIndex];
+              const targetText = texts[targetIndex];
+              const targetScreen = screens[targetIndex];
+              const targetBg = bgs[targetIndex];
+    
+              // Remove active class from current text
+              currentText.classList.remove("active");
+    
+              // Set initial position for target elements
+              gsap.set(targetText, { x: direction * config.feature.distance });
+              gsap.set(targetScreen, { x: direction * config.screen.distance });
+              gsap.set(targetBg, { opacity: 0, y: config.featureBg.distance });
+    
+              // **Animate current elements out: Add opacity fade-out for text**
+              gsap.to(currentText, {
+                x: -direction * config.feature.distance,
+                opacity: 0, // Added: Fade out the current text
+                duration: config.duration,
+                ease: config.easeOut,
+              });
+              gsap.to(currentScreen, {
+                x: -direction * config.screen.distance,
+                duration: config.duration,
+                ease: config.easeOut,
+              });
+              gsap.to(currentBg, {
+                opacity: 0,
+                duration: config.duration,
+                ease: config.easeOut,
+              });
+    
+              // **Animate target elements in: Add opacity fade-in for text**
+              gsap.to(targetText, {
+                x: 0,
+                opacity: 1, // Added: Fade in the target text
+                duration: config.duration,
+                ease: config.easeIn,
+                onComplete: () => {
+                  isAnimating = false; // Reset flag when animation completes
+                  updateButtonStates(); // Update button states after animation
+                },
+              });
+              gsap.to(targetScreen, {
+                x: 0,
+                duration: config.duration,
+                ease: config.easeIn,
+              });
+              gsap.to(targetBg, {
+                opacity: 1,
+                y: 0,
+                duration: config.duration,
+                ease: config.easeIn,
+              });
+    
+              // Add active class to target text
+              targetText.classList.add("active");
+    
+              currentIndex = targetIndex;
+            };
+    
+            // Initial button state
+            updateButtonStates();
+    
+            nextBtn.addEventListener("click", () => {
+              if (currentIndex < texts.length - 1) {
+                animateToIndex(currentIndex + 1);
+              }
+            });
+    
+            prevBtn.addEventListener("click", () => {
+              if (currentIndex > 0) {
+                animateToIndex(currentIndex - 1);
+              }
+            });
+          }
         });
-        gsap.to(targetScreen, {
-          x: 0,
-          duration: config.duration,
-          ease: config.easeIn,
-        });
-        gsap.to(targetBg, {
-          opacity: 1,
-          y: 0,
-          duration: config.duration,
-          ease: config.easeIn,
-        });
-
-        // Add active class to target text
-        targetText.classList.add("active");
-
-        currentIndex = targetIndex;
-      };
-
-      // Initial button state
-      updateButtonStates();
-
-      nextBtn.addEventListener("click", () => {
-        if (currentIndex < texts.length - 1) {
-          animateToIndex(currentIndex + 1);
-        }
       });
-
-      prevBtn.addEventListener("click", () => {
-        if (currentIndex > 0) {
-          animateToIndex(currentIndex - 1);
-        }
-      });
-    }
-  });
-});
     </script>
   </body>
 </html>
